@@ -1,0 +1,19 @@
+@import "../../theme.css";
+
+:root {
+  --color-bg-avatar: var(--color-extra-transparent);
+  --color-text-avatar: var(--color-extra-white);
+  --spacing-gap-avatar: var(--spacing-lg);
+  --font-size-avatar: var(--font-size-sm);
+  --font-weight-avatar: var(--font-weight-bold);
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-gap-avatar);
+  background-color: var(--color-bg-avatar);
+  color: var(--color-text-avatar);
+  font-size: var(--font-size-avatar);
+  font-weight: var(--font-weight-avatar);
+}

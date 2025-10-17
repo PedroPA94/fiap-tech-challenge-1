@@ -2,14 +2,13 @@
 
 import Image from "next/image";
 import styles from "./page.module.css";
-import { Button, Card } from "@/design-system/components";
-import { Divider } from "@/design-system/components/Divider/Divider";
-
+import { Avatar, Button, Card, Divider } from "@/design-system/components";
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Card>
+        <Card kind="neutral">
+          <Avatar username="Pedro" />
           <Button style={{ marginBottom: "50px" }}>Conteúdo!!</Button>
           <Divider />
         </Card>
