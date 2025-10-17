@@ -1,0 +1,126 @@
+@import "../../theme.css";
+
+:root {
+  /* === Icon Button === */
+  --border-width-icon-button-focus: var(--border-width-large);
+  --border-width-icon-button-ghost: var(--border-width-regular);
+
+  --color-bg-icon-button-disabled: var(--color-extra-gray-100);
+  --color-bg-icon-button-ghost: var(--color-extra-transparent);
+  --color-bg-icon-button-primary: var(--color-brand-primary-200);
+  --color-bg-icon-button-primary-focus: var(--color-brand-primary-200);
+  --color-bg-icon-button-primary-hover: var(--color-brand-primary-100);
+  --color-bg-icon-button-primary-pressed: var(--color-brand-primary-300);
+
+  --color-border-icon-button-ghost: var(--color-brand-highlight-200);
+  --color-border-icon-button-ghost-focus: var(--color-brand-highlight-200);
+  --color-border-icon-button-ghost-hover: var(--color-brand-highlight-100);
+  --color-border-icon-button-ghost-pressed: var(--color-brand-highlight-300);
+  --color-border-icon-button-primary-focus: var(--color-brand-secondary-300);
+
+  --color-text-icon-button-disabled: var(--color-extra-gray-200);
+  --color-text-icon-button-ghost: var(--color-brand-highlight-200);
+  --color-text-icon-button-ghost-focus: var(--color-brand-highlight-200);
+  --color-text-icon-button-ghost-hover: var(--color-brand-highlight-100);
+  --color-text-icon-button-ghost-pressed: var(--color-brand-highlight-300);
+  --color-text-icon-button-primary: var(--color-extra-white);
+
+  --size-height-icon-button-regular: var(--spacing-xl);
+  --size-height-icon-button-small: var(--spacing-lg);
+  --size-width-icon-button-regular: var(--spacing-xl);
+  --size-width-icon-button-small: var(--spacing-lg);
+
+  --spacing-horizontal-icon-button: var(--spacing-xs);
+  --spacing-vertical-icon-button: var(--spacing-xs);
+}
+
+/* === Base === */
+.iconButton {
+  padding: var(--spacing-vertical-icon-button)
+    var(--spacing-horizontal-icon-button);
+  cursor: pointer;
+  background-color: var(--color-extra-transparent) !important;
+  box-sizing: border-box;
+  border: none;
+  outline: none; /* Remove outline padrão do navegador */
+}
+.ellipsis {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.iconButton:disabled,
+.ellipsis.disabled,
+.ellipsis:disabled {
+  cursor: not-allowed;
+  border: none;
+}
+.ellipsis.disabled,
+.ellipsis:disabled {
+  background-color: var(--color-bg-icon-button-disabled) !important;
+  color: var(--color-text-icon-button-disabled) !important;
+}
+
+/* === Primary === */
+.iconButton.primary:focus {
+  outline: none;
+  border: var(--border-width-icon-button-focus) solid
+    var(--color-border-icon-button-primary-focus);
+}
+.ellipsis.primary {
+  border: none;
+}
+.primary {
+  background-color: var(--color-bg-icon-button-primary);
+  color: var(--color-text-icon-button-primary);
+}
+.primary:hover {
+  background-color: var(--color-bg-icon-button-primary-hover);
+}
+.primary:active {
+  background-color: var(--color-bg-icon-button-primary-pressed);
+}
+
+/* === Ghost === */
+.iconButton.ghost:focus-visible {
+  outline: none;
+  border: var(--border-width-icon-button-focus) solid
+    var(--color-border-icon-button-ghost-focus);
+}
+.ellipsis.ghost {
+  border-width: 1;
+  border-style: solid;
+  border-color: var(--color-border-icon-button-ghost);
+}
+.ghost {
+  background-color: var(--color-bg-icon-button-ghost);
+  color: var(--color-text-icon-button-ghost);
+  border-width: var(--border-width-icon-button-ghost);
+  border-color: var(--color-border-icon-button-ghost);
+}
+.ghost:focus {
+  outline: none;
+  border-width: var(--border-width-icon-button-focus);
+  border-color: var(--color-border-icon-button-ghost-focus);
+}
+.ghost:hover {
+  background-color: var(--color-bg-icon-button-ghost-hover);
+  color: var(--color-text-icon-button-ghost-hover);
+  border-color: var(--color-border-icon-button-ghost-hover);
+}
+.ghost:active {
+  background-color: var(--color-bg-icon-button-ghost-pressed);
+  color: var(--color-text-icon-button-ghost-pressed);
+  border-color: var(--color-border-icon-button-ghost-pressed);
+}
+
+/* === Sizes === */
+.regular {
+  width: var(--size-width-icon-button-regular);
+  height: var(--size-height-icon-button-regular);
+}
+.small {
+  width: var(--size-width-icon-button-small);
+  height: var(--size-height-icon-button-small);
+}
