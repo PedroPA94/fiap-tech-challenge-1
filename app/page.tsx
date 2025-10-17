@@ -9,10 +9,8 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Card kind="secondary" spacing="large">
-          <Button kind="critical" style={{ marginBottom: "50px" }}>
-            Conteúdo!!
-          </Button>
+        <Card>
+          <Button style={{ marginBottom: "50px" }}>Conteúdo!!</Button>
           <Divider />
         </Card>
       </main>

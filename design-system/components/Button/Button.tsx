@@ -2,7 +2,7 @@ import { ComponentProps } from "react";
 import styles from "./Button.module.css";
 
 interface ButtonProps extends ComponentProps<"button"> {
-  kind: "primary" | "secondary" | "critical" | "ghost";
+  kind?: "primary" | "secondary" | "critical" | "ghost";
 }
 
 /**

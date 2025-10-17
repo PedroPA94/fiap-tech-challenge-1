@@ -1,8 +1,8 @@
 import styles from "./Card.module.css";
 
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
-  kind: "primary" | "secondary" | "neutral";
-  spacing: "small" | "regular" | "large";
+  kind?: "primary" | "secondary" | "neutral";
+  spacing?: "small" | "regular" | "large";
   children: React.ReactNode;
 }
 
