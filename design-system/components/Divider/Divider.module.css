@@ -1,0 +1,45 @@
+@import "../../theme.css";
+
+:root {
+  /* === Divider === */
+  --border-width-divider-regular: var(--border-width-large);
+  --border-width-divider-soft: var(--border-width-regular);
+
+  --color-border-divider-highlight: var(--color-brand-highlight-200);
+  --color-border-divider-primary: var(--color-brand-primary-200);
+  --color-border-divider-secondary: var(--color-brand-secondary-200);
+}
+
+.divider {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  border-style: solid;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+}
+
+/* Tipos (cores) */
+.primary {
+  border-color: var(--color-border-divider-primary);
+}
+
+.secondary {
+  border-color: var(--color-border-divider-secondary);
+}
+
+.highlight {
+  border-color: var(--color-border-divider-highlight);
+}
+
+/* Espessuras */
+.regular {
+  border-width: var(--border-width-divider-regular);
+}
+
+.soft {
+  border-width: var(--border-width-divider-soft);
+}

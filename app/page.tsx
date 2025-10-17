@@ -3,13 +3,17 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { Button, Card } from "@/design-system/components";
+import { Divider } from "@/design-system/components/Divider/Divider";
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
         <Card kind="secondary" spacing="large">
-          <Button kind="critical">Conteúdo!!</Button>
+          <Button kind="critical" style={{ marginBottom: "50px" }}>
+            Conteúdo!!
+          </Button>
+          <Divider />
         </Card>
       </main>
       <footer className={styles.footer}>
