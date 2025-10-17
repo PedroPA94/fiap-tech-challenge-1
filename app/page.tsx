@@ -2,10 +2,18 @@
 
 import Image from "next/image";
 import styles from "./page.module.css";
-import { Avatar, Button, Card, Divider } from "@/design-system/components";
+import {
+  Avatar,
+  Button,
+  Card,
+  Divider,
+  Header,
+} from "@/design-system/components";
+
 export default function Home() {
   return (
     <div className={styles.page}>
+      <Header />
       <main className={styles.main}>
         <Card kind="neutral">
           <Avatar username="Pedro" />

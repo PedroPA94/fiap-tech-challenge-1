@@ -1,0 +1,27 @@
+@import "../../theme.css";
+
+:root {
+  /* === Header === */
+  --color-bg-header: var(--color-brand-primary-200);
+  --color-text-header-icon: var(--color-brand-highlight-200);
+  --spacing-horizontal-header: var(--spacing-xl);
+  --spacing-vertical-header: var(--spacing-none);
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: var(--spacing-vertical-header) var(--spacing-horizontal-header);
+  background-color: var(--color-bg-header);
+}
+
+.withIcon {
+  justify-content: space-between;
+}
+
+.icon {
+  color: var(--color-text-header-icon);
+  cursor: pointer;
+}
