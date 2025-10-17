@@ -73,7 +73,7 @@
 .primary:hover {
   background-color: var(--color-bg-button-primary-hover);
 }
-.primary:focus {
+.primary:focus-visible {
   background-color: var(--color-bg-button-primary-focus);
   border: var(--border-width-button-focus) solid
     var(--color-border-button-primary-focus);
@@ -91,7 +91,7 @@
 .secondary:hover {
   background-color: var(--color-bg-button-secondary-hover);
 }
-.secondary:focus {
+.secondary:focus-visible {
   background-color: var(--color-bg-button-secondary-focus);
   border: var(--border-width-button-focus) solid
     var(--color-border-button-secondary-focus);
@@ -109,7 +109,7 @@
 .critical:hover {
   background-color: var(--color-bg-button-critical-hover);
 }
-.critical:focus {
+.critical:focus-visible {
   background-color: var(--color-bg-button-critical-focus);
   border: var(--border-width-button-focus) solid
     var(--color-border-button-critical-focus);
@@ -128,7 +128,7 @@
 .ghost:hover {
   background-color: var(--color-bg-button-ghost-hover);
 }
-.ghost:focus {
+.ghost:focus-visible {
   background-color: var(--color-bg-button-ghost-focus);
   border: var(--border-width-button-focus) solid
     var(--color-border-button-ghost-focus);
