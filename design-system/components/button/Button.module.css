@@ -1,0 +1,139 @@
+@import "../../theme.css";
+
+:root {
+  /* === Border === */
+  --border-radius-button: var(--border-radius);
+  --border-width-button-focus: var(--border-width-large);
+  --border-width-button-ghost: var(--border-width-regular);
+
+  /* === Background colors === */
+  --color-bg-button-critical: var(--color-feedback-danger-200);
+  --color-bg-button-critical-focus: var(--color-feedback-danger-200);
+  --color-bg-button-critical-hover: var(--color-feedback-danger-100);
+  --color-bg-button-critical-pressed: var(--color-feedback-danger-300);
+
+  --color-bg-button-disabled: var(--color-extra-gray-100);
+
+  --color-bg-button-ghost: var(--color-extra-transparent);
+  --color-bg-button-ghost-focus: var(--color-extra-transparent);
+  --color-bg-button-ghost-hover: var(--color-brand-secondary-100);
+  --color-bg-button-ghost-pressed: var(--color-brand-secondary-200);
+
+  --color-bg-button-primary: var(--color-brand-primary-200);
+  --color-bg-button-primary-focus: var(--color-brand-primary-200);
+  --color-bg-button-primary-hover: var(--color-brand-primary-100);
+  --color-bg-button-primary-pressed: var(--color-brand-primary-300);
+
+  --color-bg-button-secondary: var(--color-brand-secondary-300);
+  --color-bg-button-secondary-focus: var(--color-brand-secondary-300);
+  --color-bg-button-secondary-hover: var(--color-brand-secondary-200);
+  --color-bg-button-secondary-pressed: var(--color-brand-secondary-400);
+
+  /* === Border colors === */
+  --color-border-button-critical-focus: var(--color-feedback-danger-300);
+  --color-border-button-ghost-focus: var(--color-brand-primary-200);
+  --color-border-button-primary-focus: var(--color-brand-secondary-300);
+  --color-border-button-secondary-focus: var(--color-brand-primary-200);
+
+  /* === Text colors === */
+  --color-text-button-critical: var(--color-extra-white);
+  --color-text-button-disabled: var(--color-extra-gray-200);
+  --color-text-button-ghost: var(--color-brand-primary-200);
+  --color-text-button-primary: var(--color-extra-white);
+  --color-text-button-secondary: var(--color-brand-primary-300);
+
+  /* === Typography === */
+  --font-size-button: var(--font-size-sm);
+  --font-weight-button: var(--font-weight-bold);
+
+  /* === Spacing === */
+  --spacing-horizontal-button: var(--spacing-lg);
+  --spacing-vertical-button: var(--spacing-sm);
+}
+
+/* === Base === */
+.button {
+  border-radius: var(--border-radius-button);
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-button);
+  padding: var(--spacing-vertical-button) var(--spacing-horizontal-button);
+  border: none;
+}
+.button:disabled {
+  background-color: var(--color-bg-button-disabled);
+  color: var(--color-text-button-disabled);
+  cursor: not-allowed;
+}
+
+/* === Primary === */
+.primary {
+  background-color: var(--color-bg-button-primary);
+  color: var(--color-text-button-primary);
+}
+.primary:hover {
+  background-color: var(--color-bg-button-primary-hover);
+}
+.primary:focus {
+  background-color: var(--color-bg-button-primary-focus);
+  border: var(--border-width-button-focus) solid
+    var(--color-border-button-primary-focus);
+  outline: none;
+}
+.primary:active {
+  background-color: var(--color-bg-button-primary-pressed);
+}
+
+/* === Secondary === */
+.secondary {
+  background-color: var(--color-bg-button-secondary);
+  color: var(--color-text-button-secondary);
+}
+.secondary:hover {
+  background-color: var(--color-bg-button-secondary-hover);
+}
+.secondary:focus {
+  background-color: var(--color-bg-button-secondary-focus);
+  border: var(--border-width-button-focus) solid
+    var(--color-border-button-secondary-focus);
+  outline: none;
+}
+.secondary:active {
+  background-color: var(--color-bg-button-secondary-pressed);
+}
+
+/* === Critical === */
+.critical {
+  background-color: var(--color-bg-button-critical);
+  color: var(--color-text-button-critical);
+}
+.critical:hover {
+  background-color: var(--color-bg-button-critical-hover);
+}
+.critical:focus {
+  background-color: var(--color-bg-button-critical-focus);
+  border: var(--border-width-button-focus) solid
+    var(--color-border-button-critical-focus);
+  outline: none;
+}
+.critical:active {
+  background-color: var(--color-bg-button-critical-pressed);
+}
+
+/* === Ghost === */
+.ghost {
+  background-color: var(--color-bg-button-ghost);
+  color: var(--color-text-button-ghost);
+  border: var(--border-width-button-ghost) solid var(--color-text-button-ghost);
+}
+.ghost:hover {
+  background-color: var(--color-bg-button-ghost-hover);
+}
+.ghost:focus {
+  background-color: var(--color-bg-button-ghost-focus);
+  border: var(--border-width-button-focus) solid
+    var(--color-border-button-ghost-focus);
+  outline: none;
+}
+.ghost:active {
+  background-color: var(--color-bg-button-ghost-pressed);
+}

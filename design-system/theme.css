@@ -1,0 +1,61 @@
+:root {
+  /* === Color Brand === */
+  --color-brand-primary-100: #086e82;
+  --color-brand-primary-200: #004d61;
+  --color-brand-primary-300: #003745;
+
+  --color-brand-secondary-100: #dee9ea;
+  --color-brand-secondary-200: #9dc2c3;
+  --color-brand-secondary-300: #81adaf;
+  --color-brand-secondary-400: #528588;
+
+  --color-brand-highlight-100: #ff7b64;
+  --color-brand-highlight-200: #ff5031;
+  --color-brand-highlight-300: #ed3615;
+
+  /* === Color Extra === */
+  --color-extra-black: #000000;
+  --color-extra-gray-100: #dddddd;
+  --color-extra-gray-200: #616161;
+  --color-extra-transparent: rgba(255, 255, 255, 0);
+  --color-extra-white: #ffffff;
+
+  /* === Color Feedback === */
+  --color-feedback-danger-100: #f93a3a;
+  --color-feedback-danger-200: #bf1313;
+  --color-feedback-danger-300: #841818;
+  --color-feedback-info: #2c2dff;
+  --color-feedback-success: #007800;
+  --color-feedback-warning: #ffc107;
+
+  /* === Font size === */
+  --font-size-xl: 32px;
+  --font-size-lg: 24px;
+  --font-size-md: 20px;
+  --font-size-sm: 16px;
+  --font-size-xs: 12px;
+
+  /* === Font weight === */
+  --font-weight-bold: 600;
+  --font-weight-regular: 400;
+
+  /* === Spacing === */
+  --spacing-xl: 32px;
+  --spacing-lg: 24px;
+  --spacing-md: 16px;
+  --spacing-sm: 8px;
+  --spacing-xs: 4px;
+  --spacing-none: 0;
+
+  /* === Elevation === */
+  --elevation-blur: 4px;
+  --elevation-offset-x: 0px;
+  --elevation-offset-y: 4px;
+  --elevation-opacity: 25%;
+  --elevation-color: var(--color-extra-black);
+
+  /* === Border === */
+  --border-radius: 8px;
+  --border-width-large: 2px;
+  --border-width-regular: 1px;
+}
