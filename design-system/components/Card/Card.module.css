@@ -1,0 +1,58 @@
+@import "../../theme.css";
+
+:root {
+  /* === Border === */
+  --border-radius-card: var(--border-radius);
+
+  /* === Background colors === */
+  --color-bg-card-neutral: var(--color-brand-secondary-100);
+  --color-bg-card-primary: var(--color-brand-primary-200);
+  --color-bg-card-secondary: var(--color-brand-secondary-200);
+
+  /* === Elevation === */
+  --elevation-blur-card: var(--elevation-blur);
+  --elevation-color-card: var(--color-extra-black);
+  --elevation-offset-x-card: var(--elevation-offset-x);
+  --elevation-offset-y-card: var(--elevation-offset-y);
+  --elevation-opacity-card: var(--elevation-opacity);
+
+  /* === Spacing === */
+  --spacing-horizontal-card-large: var(--spacing-xl);
+  --spacing-horizontal-card-regular: var(--spacing-md);
+  --spacing-horizontal-card-small: var(--spacing-sm);
+
+  --spacing-vertical-card-large: var(--spacing-xl);
+  --spacing-vertical-card-regular: var(--spacing-md);
+  --spacing-vertical-card-small: var(--spacing-sm);
+}
+
+/* === Base === */
+.card {
+  border-radius: var(--border-radius-card);
+  box-shadow: var(--elevation-offset-x-card) var(--elevation-offset-y-card)
+    var(--elevation-blur-card)
+    rgba(var(--elevation-color-card), var(--elevation-opacity-card));
+}
+
+/* === Variants === */
+.primary {
+  background-color: var(--color-bg-card-primary);
+}
+.secondary {
+  background-color: var(--color-bg-card-secondary);
+}
+.neutral {
+  background-color: var(--color-bg-card-neutral);
+}
+.large {
+  padding: var(--spacing-vertical-card-large)
+    var(--spacing-horizontal-card-large);
+}
+.regular {
+  padding: var(--spacing-vertical-card-regular)
+    var(--spacing-horizontal-card-regular);
+}
+.small {
+  padding: var(--spacing-vertical-card-small)
+    var(--spacing-horizontal-card-small);
+}

@@ -2,13 +2,15 @@
 
 import Image from "next/image";
 import styles from "./page.module.css";
-import { Button } from "@/design-system/components/button/Button";
+import { Button, Card } from "@/design-system/components";
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Button kind="critical">Conteúdo!!</Button>
+        <Card kind="secondary" spacing="large">
+          <Button kind="critical">Conteúdo!!</Button>
+        </Card>
       </main>
       <footer className={styles.footer}>
         <a
