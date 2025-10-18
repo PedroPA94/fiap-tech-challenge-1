@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
 :root {
   /* === Color Brand === */
   --color-brand-primary-100: #086e82;
@@ -38,6 +40,9 @@
   /* === Font weight === */
   --font-weight-bold: 600;
   --font-weight-regular: 400;
+
+  /* === Font Family === */
+  --font-family: "Inter", sans-serif;
 
   /* === Spacing === */
   --spacing-xl: 32px;

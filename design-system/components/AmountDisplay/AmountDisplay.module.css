@@ -1,0 +1,80 @@
+@import "../../theme.css";
+
+:root {
+  --color-bg-amount-display: var(--color-extra-transparent);
+
+  --color-text-amount-display-amount-dark: var(--color-brand-primary-200);
+  --color-text-amount-display-amount-light: var(--color-extra-white);
+  --color-text-amount-display-amount-negative: var(--color-feedback-danger-200);
+  --color-text-amount-display-amount-positive: var(--color-feedback-info);
+
+  --color-text-amount-display-label-dark: var(--color-brand-primary-200);
+  --color-text-amount-display-label-light: var(--color-extra-white);
+
+  --font-size-amount-display-amount-large: var(--font-size-lg);
+  --font-size-amount-display-amount-regular: var(--font-size-md);
+  --font-size-amount-display-amount-small: var(--font-size-sm);
+
+  --font-size-amount-display-label-large: var(--font-size-sm);
+  --font-size-amount-display-label-regular: var(--font-size-xs);
+  --font-size-amount-display-label-small: var(--font-size-xs);
+
+  --font-weight-amount-display: var(--font-weight-regular);
+
+  --spacing-gap-amount-display-large: var(--spacing-sm);
+  --spacing-gap-amount-display-regular: var(--spacing-xs);
+  --spacing-gap-amount-display-small: var(--spacing-xs);
+}
+
+.amountDisplay {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-amount-display);
+  font-weight: var(--font-weight-amount-display);
+  font-family: var(--font-family);
+}
+.label {
+  display: block;
+}
+
+/* === Kind === */
+.neutral {
+  color: inherit;
+}
+.positive {
+  color: var(--color-text-amount-display-amount-positive);
+}
+.negative {
+  color: var(--color-text-amount-display-amount-negative);
+}
+
+/* === Size === */
+.large {
+  font-size: var(--font-size-amount-display-label-large);
+  gap: var(--spacing-gap-amount-display-large);
+}
+.large__amount {
+  font-size: var(--font-size-amount-display-amount-large);
+}
+.regular {
+  font-size: var(--font-size-amount-display-label-regular);
+  gap: var(--spacing-gap-amount-display-regular);
+}
+.regular__amount {
+  font-size: var(--font-size-amount-display-amount-regular);
+}
+.small {
+  font-size: var(--font-size-amount-display-label-small);
+  gap: var(--spacing-gap-amount-display-small);
+}
+.small__amount {
+  font-size: var(--font-size-amount-display-amount-small);
+}
+
+/* === Style === */
+.dark {
+  color: var(--color-text-amount-display-amount-dark);
+}
+.light {
+  color: var(--color-text-amount-display-amount-light);
+}

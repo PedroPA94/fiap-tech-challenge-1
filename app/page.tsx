@@ -3,6 +3,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import {
+  AmountDisplay,
   Avatar,
   Button,
   Card,
@@ -13,13 +14,14 @@ import {
 export default function Home() {
   return (
     <div className={styles.page}>
-      <Header />
       <main className={styles.main}>
-        <Card kind="neutral">
-          <Avatar username="Pedro" />
-          <Button style={{ marginBottom: "50px" }}>Conteúdo!!</Button>
-          <Divider />
-        </Card>
+        <AmountDisplay
+          label="teste"
+          amount={1000234.56}
+          kind="positive"
+          size="small"
+          style="dark"
+        />
       </main>
       <footer className={styles.footer}>
         <a
