@@ -7,21 +7,30 @@ import {
   Avatar,
   Button,
   Card,
+  Dialog,
   Divider,
   Header,
 } from "@/design-system/components";
+import { useState } from "react";
 
 export default function Home() {
+  const [open, setOpen] = useState(false);
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <AmountDisplay
-          label="teste"
-          amount={1000234.56}
-          kind="positive"
-          size="small"
-          style="dark"
-        />
+        <button onClick={() => setOpen(true)}>Abrir diálogo</button>
+
+        <Dialog
+          size="regular"
+          type="critical"
+          isOpen={open}
+          onClose={() => setOpen(false)}
+          onPrimaryClick={() => setOpen(false)}
+          primaryLabel="OK"
+          title="Exemplo de Diálogo"
+        >
+          <p>Este é um exemplo de diálogo usando o componente Dialog.</p>
+        </Dialog>
       </main>
       <footer className={styles.footer}>
         <a

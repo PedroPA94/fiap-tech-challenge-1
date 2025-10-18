@@ -5,3 +5,4 @@ export * from "./Avatar/Avatar";
 export * from "./IconButton/IconButton";
 export * from "./Header/Header";
 export * from "./AmountDisplay/AmountDisplay";
+export * from "./Dialog/Dialog";

@@ -58,6 +58,7 @@
   font-weight: var(--font-weight-button);
   padding: var(--spacing-vertical-button) var(--spacing-horizontal-button);
   border: none;
+  cursor: pointer;
 }
 .button:disabled {
   background-color: var(--color-bg-button-disabled);

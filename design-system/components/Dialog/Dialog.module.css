@@ -1,0 +1,86 @@
+@import "../../theme.css";
+
+:root {
+  --border-radius-dialog: var(--border-radius);
+  --color-bg-dialog: var(--color-extra-white);
+  --color-text-dialog-title: var(--color-extra-black);
+
+  --elevation-blur-dialog: var(--elevation-blur);
+  --elevation-color-dialog: var(--color-extra-black);
+  --elevation-offset-x-dialog: var(--elevation-offset-x);
+  --elevation-offset-y-dialog: var(--elevation-offset-y);
+  --elevation-opacity-dialog: var(--elevation-opacity);
+
+  --font-size-dialog-title: var(--font-size-lg);
+  --font-weight-dialog-title: var(--font-weight-bold);
+
+  --spacing-gap-dialog: var(--spacing-xl);
+  --spacing-horizontal-dialog-regular: var(--spacing-xl);
+  --spacing-horizontal-dialog-small: var(--spacing-md);
+  --spacing-vertical-dialog-regular: var(--spacing-lg);
+  --spacing-vertical-dialog-small: var(--spacing-lg);
+
+  --color-bg-overlay: rgba(0, 0, 0, 0.35);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: var(--color-bg-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.dialog {
+  border: none;
+  border-radius: var(--border-radius-dialog);
+  background-color: var(--color-bg-dialog);
+  color: var(--color-text-dialog-title);
+  box-shadow: var(--elevation-offset-x-dialog) var(--elevation-offset-y-dialog)
+    var(--elevation-blur-dialog)
+    rgba(0, 0, 0, calc(var(--elevation-opacity-dialog) / 100));
+  max-width: 600px;
+  width: fit-content;
+  box-sizing: border-box;
+  animation: fadeIn 0.2s ease;
+  position: relative;
+}
+
+.title {
+  font-size: var(--font-size-dialog-title);
+  font-weight: var(--font-weight-dialog-title);
+  margin-bottom: var(--spacing-gap-dialog);
+}
+
+.content {
+  margin-bottom: var(--spacing-gap-dialog);
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-gap-dialog);
+}
+
+/* === Size === */
+.regular {
+  padding: var(--spacing-vertical-dialog-regular)
+    var(--spacing-horizontal-dialog-regular);
+}
+.small {
+  padding: var(--spacing-vertical-dialog-small)
+    var(--spacing-horizontal-dialog-small);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
