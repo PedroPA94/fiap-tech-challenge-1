@@ -9,28 +9,32 @@ import {
   Card,
   Dialog,
   Divider,
+  Dropdown,
   Header,
 } from "@/design-system/components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const [open, setOpen] = useState(false);
+  const [val, setVal] = useState<string | number | undefined>("");
+
+  useEffect(() => {
+    console.log("Selected value:", val);
+  }, [val]);
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <button onClick={() => setOpen(true)}>Abrir diálogo</button>
-
-        <Dialog
-          size="regular"
-          type="critical"
-          isOpen={open}
-          onClose={() => setOpen(false)}
-          onPrimaryClick={() => setOpen(false)}
-          primaryLabel="OK"
-          title="Exemplo de Diálogo"
-        >
-          <p>Este é um exemplo de diálogo usando o componente Dialog.</p>
-        </Dialog>
+        <Dropdown
+          label="Select an option"
+          placeholder="Choose..."
+          options={[
+            { value: "option1", content: "Option 1" },
+            { value: "option2", content: "Option 2" },
+            { value: "option3", content: "Option 3" },
+          ]}
+          value={val}
+          onChange={(value) => setVal(value)}
+        ></Dropdown>
       </main>
       <footer className={styles.footer}>
         <a

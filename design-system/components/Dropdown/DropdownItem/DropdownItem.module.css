@@ -1,0 +1,23 @@
+:root {
+  --color-bg-dropdown-item: var(--color-extra-white);
+  --color-bg-dropdown-item-hover: var(--color-brand-secondary-100);
+  --color-text-dropdown-item: var(--color-extra-black);
+  --font-size-dropdown-item: var(--font-size-sm);
+  --font-weight-dropdown-item: var(--font-weight-regular);
+  --spacing-horizontal-dropdown-item: var(--spacing-md);
+  --spacing-vertical-dropdown-item: var(--spacing-md);
+}
+
+.dropdownItem {
+  background-color: var(--color-bg-dropdown-item);
+  color: var(--color-text-dropdown-item);
+  font-size: var(--font-size-dropdown-item);
+  font-weight: var(--font-weight-dropdown-item);
+  padding: var(--spacing-vertical-dropdown-item)
+    var(--spacing-horizontal-dropdown-item);
+  width: 100%;
+}
+.dropdownItem:hover {
+  background-color: var(--color-bg-dropdown-item-hover);
+  cursor: pointer;
+}

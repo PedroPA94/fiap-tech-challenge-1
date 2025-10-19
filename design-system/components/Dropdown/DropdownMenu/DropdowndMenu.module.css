@@ -1,0 +1,12 @@
+:root {
+  --border-radius-dropdown-menu: var(--border-radius);
+  --border-width-dropdown-menu: var(--border-width-regular);
+  --color-border-dropdown-menu: var(--color-brand-primary-200);
+}
+
+.dropdownMenu {
+  border: var(--border-width-dropdown-menu) solid
+    var(--color-border-dropdown-menu);
+  border-radius: var(--border-radius-dropdown-menu);
+  overflow: hidden;
+}

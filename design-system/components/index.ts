@@ -6,3 +6,4 @@ export * from "./IconButton/IconButton";
 export * from "./Header/Header";
 export * from "./AmountDisplay/AmountDisplay";
 export * from "./Dialog/Dialog";
+export * from "./Dropdown/Dropdown";

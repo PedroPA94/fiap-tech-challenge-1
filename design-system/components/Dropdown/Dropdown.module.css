@@ -1,0 +1,58 @@
+:root {
+  --border-radius-dropdown-input: var(--border-radius);
+  --border-width-dropdown-input: var(--border-width-regular);
+  --color-bg-dropdown-input: var(--color-extra-white);
+  --color-border-dropdown-input: var(--color-brand-primary-200);
+  --color-text-dropdown-input: var(--color-extra-black);
+  --color-text-dropdown-label: var(--color-extra-black);
+  --font-size-dropdown-input: var(--font-size-sm);
+  --font-size-dropdown-label: var(--font-size-xs);
+  --font-weight-dropdown-input: var(--font-weight-regular);
+  --font-weight-dropdown-label: var(--font-weight-bold);
+  --spacing-gap-dropdown: var(--spacing-xs);
+  --spacing-horizontal-dropdown-input: var(--spacing-md);
+  --spacing-vertical-dropdown-input: var(--spacing-md);
+}
+
+.dropdownWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-gap-dropdown);
+  position: relative;
+  width: fit-content;
+}
+
+.label {
+  font-size: var(--font-size-dropdown-label);
+  font-weight: var(--font-weight-dropdown-label);
+  color: var(--color-text-dropdown-label);
+}
+
+.dropdownButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-bg-dropdown-input);
+  border: var(--border-width-dropdown-input) solid
+    var(--color-border-dropdown-input);
+  border-radius: var(--border-radius-dropdown-input);
+  padding: var(--spacing-vertical-dropdown-input)
+    var(--spacing-horizontal-dropdown-input);
+  font-size: var(--font-size-dropdown-input);
+  font-weight: var(--font-weight-dropdown-input);
+  color: var(--color-text-dropdown-input);
+  cursor: pointer;
+  width: 100%;
+}
+
+.chevronIcon {
+  margin-left: var(--spacing-sm);
+}
+
+.dropdownMenuWrapper {
+  position: absolute;
+  top: calc(100% + var(--spacing-xs));
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
