@@ -1,7 +1,7 @@
-import { ComponentProps } from "react";
+import React from "react";
 import styles from "./Button.module.css";
 
-interface ButtonProps extends ComponentProps<"button"> {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   kind?: "primary" | "secondary" | "critical" | "ghost";
 }
 

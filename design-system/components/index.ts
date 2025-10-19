@@ -7,3 +7,4 @@ export * from "./Header/Header";
 export * from "./AmountDisplay/AmountDisplay";
 export * from "./Dialog/Dialog";
 export * from "./Dropdown/Dropdown";
+export * from "./Input/Input";

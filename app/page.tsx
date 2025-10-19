@@ -11,30 +11,35 @@ import {
   Divider,
   Dropdown,
   Header,
+  Input,
 } from "@/design-system/components";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [open, setOpen] = useState(false);
-  const [val, setVal] = useState<string | number | undefined>("");
+  const [name, setName] = useState("");
+  const [error, setError] = useState("");
 
-  useEffect(() => {
-    console.log("Selected value:", val);
-  }, [val]);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
+    if (e.target.value.length < 3) {
+      setError("O nome deve ter ao menos 3 caracteres");
+    } else {
+      setError("");
+    }
+  };
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Dropdown
-          label="Select an option"
-          placeholder="Choose..."
-          options={[
-            { value: "option1", content: "Option 1" },
-            { value: "option2", content: "Option 2" },
-            { value: "option3", content: "Option 3" },
-          ]}
-          value={val}
-          onChange={(value) => setVal(value)}
-        ></Dropdown>
+        <Input
+          label="Nome"
+          placeholder="Digite seu nome"
+          required
+          value={name}
+          onChange={handleChange}
+          hint={error || "Seu nome completo"}
+          error={Boolean(error)}
+        />
       </main>
       <footer className={styles.footer}>
         <a

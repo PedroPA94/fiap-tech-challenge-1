@@ -1,7 +1,7 @@
 import { DropdownMenu } from "./DropdownMenu/DropdownMenu";
 import { DropdownItemProps } from "./DropdownItem/DropdownItem";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import styles from "./Dropdown.module.css";
 import Icon from "@mdi/react";
 import { mdiChevronDown, mdiChevronUp } from "@mdi/js";
@@ -14,6 +14,33 @@ interface DropdownProps {
   onChange?: (value: string | number | undefined) => void;
 }
 
+/**
+ * Componente de dropdown customizado com comportamento similar a um select HTML.
+ *
+ * @param props - Propriedades do componente
+ * @param props.label - Texto do label associado ao dropdown
+ * @param props.placeholder - Texto placeholder exibido quando nenhuma opção está selecionada
+ * @param props.options - Array de opções do dropdown, cada uma com `value` e `content`
+ * @param props.value - Valor selecionado do dropdown (controlado)
+ * @param props.onChange - Função chamada ao selecionar uma opção, recebe o `value` selecionado
+ *
+ * @example
+ * ```tsx
+ * const options = [
+ *   { value: "1", content: "Opção 1" },
+ *   { value: "2", content: "Opção 2" },
+ *   { value: "3", content: "Opção 3" }
+ * ];
+ *
+ * <Dropdown
+ *   label="Escolha uma opção"
+ *   placeholder="Selecione..."
+ *   options={options}
+ *   value={selectedOption}
+ *   onChange={(value) => setSelectedOption(value)}
+ * />
+ * ```
+ */
 export function Dropdown({
   label,
   placeholder,
@@ -100,9 +127,11 @@ export function Dropdown({
     }
   };
 
+  const labelId = useId();
+
   return (
     <div className={styles.dropdownWrapper} ref={wrapperRef}>
-      <label className={styles.label} id="dropdown-label">
+      <label className={styles.label} id={labelId}>
         {label}
       </label>
 
@@ -112,7 +141,7 @@ export function Dropdown({
         className={styles.dropdownButton}
         aria-haspopup="listbox"
         aria-expanded={isOpen}
-        aria-labelledby="dropdown-label"
+        aria-labelledby={labelId}
         onClick={() => {
           setIsOpen((prev) => !prev);
           setHighlightedIndex(0);
@@ -131,7 +160,7 @@ export function Dropdown({
         <div
           className={styles.dropdownMenuWrapper}
           role="listbox"
-          tabIndex={-1}
+          tabIndex={0}
           aria-activedescendant={
             highlightedIndex !== null
               ? `dropdown-item-${highlightedIndex}`

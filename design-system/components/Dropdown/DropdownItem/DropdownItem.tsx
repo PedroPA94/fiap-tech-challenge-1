@@ -13,12 +13,13 @@ export function DropdownItem({
   isHighlighted,
 }: DropdownItemProps) {
   return (
-    <option
+    <div
+      role="option"
       className={styles.dropdownItem}
-      value={value}
+      data-value={value}
       aria-selected={isHighlighted}
     >
       {content}
-    </option>
+    </div>
   );
 }
