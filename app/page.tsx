@@ -12,34 +12,22 @@ import {
   Dropdown,
   Header,
   Input,
+  Menu,
 } from "@/design-system/components";
 import { useEffect, useState } from "react";
+import { link } from "fs";
 
 export default function Home() {
-  const [name, setName] = useState("");
-  const [error, setError] = useState("");
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value);
-    if (e.target.value.length < 3) {
-      setError("O nome deve ter ao menos 3 caracteres");
-    } else {
-      setError("");
-    }
-  };
+  const navItems = [
+    { content: "Nav1", link: "/" },
+    { content: "Nav2", link: "/2" },
+    { content: "Nav3", link: "/3" },
+  ];
 
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Input
-          label="Nome"
-          placeholder="Digite seu nome"
-          required
-          value={name}
-          onChange={handleChange}
-          hint={error || "Seu nome completo"}
-          error={Boolean(error)}
-        />
+        <Menu navigationItems={navItems}></Menu>
       </main>
       <footer className={styles.footer}>
         <a

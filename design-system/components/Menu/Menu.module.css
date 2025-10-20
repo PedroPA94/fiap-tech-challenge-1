@@ -1,0 +1,15 @@
+:root {
+  --spacing-gap-menu: var(--spacing-sm);
+  --spacing-horizontal-menu: var(--spacing-md);
+  --spacing-vertical-menu: var(--spacing-md);
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-gap-menu);
+  padding: var(--spacing-vertical-menu) var(--spacing-horizontal-menu);
+  width: 100%;
+}

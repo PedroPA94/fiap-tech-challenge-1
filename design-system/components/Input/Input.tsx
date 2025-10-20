@@ -1,5 +1,5 @@
 import { useId } from "react";
-import styles from "../Input.module.css";
+import styles from "./Input.module.css";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;

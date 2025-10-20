@@ -1,0 +1,50 @@
+:root {
+  --border-width-menu-item-focus: var(--border-width-large);
+  --color-bg-menu-item: var(--color-extra-transparent);
+  --color-border-menu-item-focus: var(--color-brand-primary-200);
+
+  --color-text-menu-item: var(--color-brand-primary-200);
+  --color-text-menu-item-focus: var(--color-brand-primary-200);
+  --color-text-menu-item-hover: var(--color-brand-primary-200);
+  --color-text-menu-item-selected: var(--color-brand-highlight-200);
+
+  --font-size-menu-item: var(--font-size-sm);
+  --font-weight-menu-item: var(--font-weight-regular);
+  --font-weight-menu-item-focus: var(--font-weight-bold);
+  --font-weight-menu-item-hover: var(--font-weight-bold);
+  --font-weight-menu-item-selected: var(--font-weight-bold);
+
+  --spacing-gap-menu-item: var(--spacing-sm);
+}
+
+.menuItem {
+  background-color: var(--color-bg-menu-item);
+  color: var(--color-text-menu-item);
+  font-size: var(--font-size-menu-item);
+  font-weight: var(--font-weight-menu-item);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-gap-menu-item);
+  width: 100%;
+  cursor: pointer;
+}
+.menuItem:hover,
+.menuLink:hover {
+  font-weight: var(--font-weight-menu-item-hover);
+  color: var(--color-text-menu-item-hover);
+}
+.menuItem:focus-visible,
+.menuLink:focus-visible {
+  border: var(--border-width-menu-item-focus) solid
+    var(--color-border-menu-item-focus);
+  outline: none;
+  font-weight: var(--font-weight-menu-item-focus);
+  color: var(--color-text-menu-item-focus);
+}
+.menuItem.selected,
+.menuLink.selected {
+  font-weight: var(--font-weight-menu-item-selected);
+  color: var(--color-text-menu-item-selected);
+}
