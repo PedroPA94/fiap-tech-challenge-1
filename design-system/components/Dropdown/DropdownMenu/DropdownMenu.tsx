@@ -8,6 +8,9 @@ interface DropdownMenuProps extends React.HTMLAttributes<HTMLDivElement> {
   })[];
 }
 
+/**
+ * @internal
+ **/
 export function DropdownMenu({ options }: DropdownMenuProps) {
   return (
     <div className={styles.dropdownMenu}>

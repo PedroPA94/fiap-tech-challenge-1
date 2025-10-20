@@ -7,6 +7,9 @@ export interface DropdownItemProps
   isHighlighted?: boolean;
 }
 
+/**
+ * @internal
+ **/
 export function DropdownItem({
   value,
   content,

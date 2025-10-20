@@ -9,6 +9,9 @@ export interface MenuItemProps {
   selected?: boolean;
 }
 
+/**
+ * @internal
+ **/
 export function MenuItem({ content, link, last, selected }: MenuItemProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
