@@ -1,0 +1,9 @@
+:root {
+  --spacing-gap-timeline: var(--spacing-lg);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-gap-timeline);
+}

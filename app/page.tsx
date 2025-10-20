@@ -13,21 +13,35 @@ import {
   Header,
   Input,
   Menu,
+  Timeline,
 } from "@/design-system/components";
 import { useEffect, useState } from "react";
 import { link } from "fs";
 
 export default function Home() {
-  const navItems = [
-    { content: "Nav1", link: "/" },
-    { content: "Nav2", link: "/2" },
-    { content: "Nav3", link: "/3" },
+  const items = [
+    { amount: 1000, date: "2025-10-04", label: "Depósito" },
+    { amount: -200, date: "2025-10-10", label: "Saque" },
+    { amount: 500, date: "2025-10-15", label: "Depósito" },
   ];
 
+  const groups = [
+    {
+      title: "Outubro 2025",
+      timelineItems: items,
+    },
+    {
+      title: "Setembro 2025",
+      timelineItems: [
+        { amount: -150, date: "2025-09-20", label: "Saque" },
+        { amount: 300, date: "2025-09-25", label: "Depósito" },
+      ],
+    },
+  ];
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Menu navigationItems={navItems}></Menu>
+        <Timeline groups={groups} />
       </main>
       <footer className={styles.footer}>
         <a

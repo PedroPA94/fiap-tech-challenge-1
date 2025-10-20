@@ -1,0 +1,16 @@
+:root {
+  --color-text-timeline-group: var(--color-brand-primary-200);
+  --font-size-timeline-group: var(--font-size-xs);
+  --font-weight-timeline-group: var(--font-weight-bold);
+  --spacing-gap-timeline-group: var(--spacing-md);
+}
+
+.timelineGroup {
+  color: var(--color-text-timeline-group);
+  font-size: var(--font-size-timeline-group);
+  font-weight: var(--font-weight-timeline-group);
+  font-family: var(--font-family);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-gap-timeline-group);
+}

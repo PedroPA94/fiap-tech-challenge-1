@@ -1,0 +1,22 @@
+:root {
+  --color-text-timeline-item: var(--color-brand-primary-200);
+  --font-size-timeline-item: var(--font-size-xs);
+  --font-weight-timeline-item: var(--font-weight-regular);
+}
+
+.timelineItem {
+  color: var(--color-text-timeline-item);
+  font-size: var(--font-size-timeline-item);
+  font-weight: var(--font-weight-timeline-item);
+  font-family: var(--font-family);
+  display: flex;
+  justify-content: space-between;
+}
+
+.timelineAmount {
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+  gap: var(--spacing-sm);
+  padding-right: var(--spacing-lg);
+}
