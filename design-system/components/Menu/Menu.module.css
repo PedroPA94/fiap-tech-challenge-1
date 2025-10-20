@@ -12,4 +12,5 @@
   gap: var(--spacing-gap-menu);
   padding: var(--spacing-vertical-menu) var(--spacing-horizontal-menu);
   width: 100%;
+  font-family: var(--font-family);
 }

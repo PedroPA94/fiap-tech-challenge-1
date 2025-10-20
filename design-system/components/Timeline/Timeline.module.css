@@ -6,4 +6,5 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-gap-timeline);
+  font-family: var(--font-family);
 }

@@ -29,6 +29,7 @@
   gap: var(--spacing-gap-menu-item);
   width: 100%;
   cursor: pointer;
+  font-family: var(--font-family);
 }
 .menuItem:hover,
 .menuLink:hover {

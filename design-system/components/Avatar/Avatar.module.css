@@ -16,4 +16,5 @@
   color: var(--color-text-avatar);
   font-size: var(--font-size-avatar);
   font-weight: var(--font-weight-avatar);
+  font-family: var(--font-family);
 }

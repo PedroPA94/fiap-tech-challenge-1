@@ -40,6 +40,7 @@
     var(--spacing-horizontal-dropdown-input);
   font-size: var(--font-size-dropdown-input);
   font-weight: var(--font-weight-dropdown-input);
+  font-family: var(--font-family);
   color: var(--color-text-dropdown-input);
   cursor: pointer;
   width: 100%;

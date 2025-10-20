@@ -59,6 +59,7 @@
     var(--spacing-horizontal-input-input);
   outline: none;
   border-style: solid;
+  font-family: var(--font-family);
 }
 .input:focus {
   border-width: var(--border-width-input-focus);

@@ -46,6 +46,7 @@
   box-sizing: border-box;
   animation: fadeIn 0.2s ease;
   position: relative;
+  font-family: var(--font-family);
 }
 
 .title {
