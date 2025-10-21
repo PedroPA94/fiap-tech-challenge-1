@@ -63,7 +63,7 @@
 }
 
 /* === Primary === */
-.iconButton.primary:focus {
+.iconButton.primary:focus-visible {
   outline: none;
   border: var(--border-width-icon-button-focus) solid
     var(--color-border-icon-button-primary-focus);

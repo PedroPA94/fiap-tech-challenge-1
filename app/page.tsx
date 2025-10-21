@@ -14,34 +14,62 @@ import {
   Input,
   Menu,
   Timeline,
+  TransactionList,
 } from "@/design-system/components";
 import { useEffect, useState } from "react";
 import { link } from "fs";
+import { TransactionItem } from "@/design-system/components/TransactionList/TransactionItem/TransactionItem";
 
 export default function Home() {
-  const items = [
-    { amount: 1000, date: "2025-10-04", label: "Depósito" },
-    { amount: -200, date: "2025-10-10", label: "Saque" },
-    { amount: 500, date: "2025-10-15", label: "Depósito" },
+  const transactions = [
+    {
+      amount: 100,
+      date: "2025-09-10",
+      label: "Deposito",
+      id: "1",
+    },
+    {
+      amount: -100,
+      date: "2025-10-10",
+      label: "Deposito",
+      id: "2",
+    },
+    {
+      amount: 100,
+      date: "2025-10-10",
+      label: "Deposito",
+      id: "3",
+    },
+    {
+      amount: 100,
+      date: "2025-11-10",
+      label: "Deposito",
+      id: "4",
+    },
+    {
+      amount: -100,
+      date: "2025-10-10",
+      label: "Deposito",
+      id: "5",
+    },
+    {
+      amount: 100,
+      date: "2025-10-10",
+      label: "Deposito",
+      id: "6",
+    },
   ];
 
-  const groups = [
-    {
-      title: "Outubro 2025",
-      timelineItems: items,
-    },
-    {
-      title: "Setembro 2025",
-      timelineItems: [
-        { amount: -150, date: "2025-09-20", label: "Saque" },
-        { amount: 300, date: "2025-09-25", label: "Depósito" },
-      ],
-    },
-  ];
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Timeline groups={groups} />
+        <div style={{ width: "600px" }}>
+          <TransactionList
+            transactions={transactions}
+            onEdit={(id) => console.log("Editar:", id)}
+            onDelete={(id) => console.log("Excluir:", id)}
+          />
+        </div>
       </main>
       <footer className={styles.footer}>
         <a
