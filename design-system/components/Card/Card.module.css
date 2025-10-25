@@ -32,6 +32,7 @@
   box-shadow: var(--elevation-offset-x-card) var(--elevation-offset-y-card)
     var(--elevation-blur-card)
     rgba(var(--elevation-color-card), var(--elevation-opacity-card));
+  width: 100%;
 }
 
 /* === Variants === */

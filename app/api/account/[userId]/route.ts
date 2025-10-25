@@ -6,6 +6,8 @@ const accountsInfo = [
     balance: 2500,
     firstname: "Joana",
     lastname: "da Silva Oliveira",
+    password: "teste123",
+    email: "teste@teste.com",
   },
 ];
 
@@ -24,5 +26,9 @@ export async function GET(
     );
   }
 
-  return NextResponse.json(account);
+  const { password, ...accountData } = account;
+
+  return NextResponse.json({
+    ...accountData,
+  });
 }

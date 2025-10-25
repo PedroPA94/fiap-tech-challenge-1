@@ -1,3 +1,5 @@
+"use client";
+
 import { MenuItem, MenuItemProps } from "./MenuItem/MenuItem";
 import styles from "./Menu.module.css";
 import { usePathname } from "next/navigation";

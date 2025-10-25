@@ -1,3 +1,5 @@
+"use client";
+
 import { DropdownMenu } from "./DropdownMenu/DropdownMenu";
 import { DropdownItemProps } from "./DropdownItem/DropdownItem";
 
