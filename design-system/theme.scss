@@ -1,0 +1,10 @@
+$spacers: (
+  0: var(--spacing-none),
+  1: var(--spacing-xs),
+  2: var(--spacing-sm),
+  3: var(--spacing-md),
+  4: var(--spacing-lg),
+  5: var(--spacing-xl),
+);
+
+@import "bootstrap/scss/bootstrap";

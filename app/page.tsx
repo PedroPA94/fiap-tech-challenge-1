@@ -8,6 +8,7 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.content}>
+        <h1 className="text-primary ps-3 ">Bootstrap</h1>
         <Card kind="primary" spacing="regular">
           <div className={`${styles.cardContent} textLight`}>
             <div>

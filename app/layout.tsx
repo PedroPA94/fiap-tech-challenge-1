@@ -1,5 +1,6 @@
+import "./globals.scss";
+
 import { Header } from "@/design-system/components";
-import "./globals.css";
 
 import { getUser } from "./lib/getUser";
 

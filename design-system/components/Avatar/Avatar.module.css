@@ -18,3 +18,7 @@
   font-weight: var(--font-weight-avatar);
   font-family: var(--font-family);
 }
+
+.avatar p {
+  margin-bottom: 0;
+}

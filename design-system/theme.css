@@ -3,11 +3,11 @@
 :root {
   /* === Color Brand === */
   --color-brand-primary-100: #086e82;
-  --color-brand-primary-200: #004d61;
+  --color-brand-primary-200: rgb(0, 77, 97);
   --color-brand-primary-300: #003745;
 
   --color-brand-secondary-100: #dee9ea;
-  --color-brand-secondary-200: #9dc2c3;
+  --color-brand-secondary-200: rgb(157, 194, 195);
   --color-brand-secondary-300: #81adaf;
   --color-brand-secondary-400: #528588;
 
@@ -24,11 +24,11 @@
 
   /* === Color Feedback === */
   --color-feedback-danger-100: #f93a3a;
-  --color-feedback-danger-200: #bf1313;
+  --color-feedback-danger-200: rgb(191, 19, 19);
   --color-feedback-danger-300: #841818;
-  --color-feedback-info: #2c2dff;
-  --color-feedback-success: #007800;
-  --color-feedback-warning: #ffc107;
+  --color-feedback-info: rgb(44, 45, 255);
+  --color-feedback-success: rgb(0, 120, 0);
+  --color-feedback-warning: rgb(255, 193, 7);
 
   /* === Font size === */
   --font-size-xl: 32px;
@@ -63,4 +63,16 @@
   --border-radius: 8px;
   --border-width-large: 2px;
   --border-width-regular: 1px;
+
+  /* === Bootstrap === */
+
+  /* Color */
+  --bs-primary-rgb: 0, 77, 97;
+  --bs-secondary-rgb: 157, 194, 195;
+  --bs-success-rgb: 0, 120, 0;
+  --bs-info-rgb: 44, 45, 255;
+  --bs-warning-rgb: 191, 19, 19;
+  --bs-danger-rgb: 255, 193, 7;
+  --bs-light-rgb: 255, 255, 255;
+  --bs-dark-rgb: 0, 0, 0;
 }
