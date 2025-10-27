@@ -31,12 +31,16 @@ export function Header({
 }: HeaderProps) {
   return (
     <header
-      className={`${styles.header} ${showIcon ? styles.withIcon : ""}`}
+      className={`${styles.header} ${
+        showIcon
+          ? "justify-content-between justify-content-lg-end"
+          : "justify-content-end"
+      }`}
       style={{ height }}
       {...props}
     >
       {showIcon && (
-        <div tabIndex={0}>
+        <div tabIndex={0} className="d-lg-none">
           <Icon path={mdiMenu} size={1} className={styles.icon} />
         </div>
       )}

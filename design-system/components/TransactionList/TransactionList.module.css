@@ -11,4 +11,5 @@
   height: inherit;
   padding-right: var(--spacing-lg);
   font-family: var(--font-family);
+  padding: 0;
 }

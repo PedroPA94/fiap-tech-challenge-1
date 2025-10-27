@@ -3,6 +3,7 @@ import styles from "./Input.module.css";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
+  labelColor?: "text-primary" | "text-dark" | "text-light";
   hint?: string;
   error?: boolean;
 }
@@ -33,6 +34,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
  */
 export function Input({
   label,
+  labelColor = "text-dark",
   hint,
   error,
   required,
@@ -45,7 +47,7 @@ export function Input({
 
   return (
     <div className={styles.inputWrapper}>
-      <label htmlFor={inputId} className={styles.label}>
+      <label htmlFor={inputId} className={`${styles.label} ${labelColor}`}>
         {label}
         {required && <span className={styles.required}> *</span>}
       </label>

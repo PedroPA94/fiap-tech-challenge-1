@@ -7,4 +7,9 @@ $spacers: (
   5: var(--spacing-xl),
 );
 
+$font-family-sans-serif: var(--font-family);
+$font-weight-normal: var(--font-weight-regular);
+$font-weight-bold: var(--font-weight-bold);
+$line-height-base: 1.2;
+
 @import "bootstrap/scss/bootstrap";

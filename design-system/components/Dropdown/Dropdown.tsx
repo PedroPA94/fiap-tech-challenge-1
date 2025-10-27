@@ -10,6 +10,7 @@ import { mdiChevronDown, mdiChevronUp } from "@mdi/js";
 
 interface DropdownProps {
   label: string;
+  labelColor: "text-primary" | "text-dark" | "text-light";
   placeholder?: string;
   options: DropdownItemProps[];
   value?: string | number;
@@ -45,6 +46,7 @@ interface DropdownProps {
  */
 export function Dropdown({
   label,
+  labelColor = "text-dark",
   placeholder,
   options,
   value: controlledValue,
@@ -133,7 +135,7 @@ export function Dropdown({
 
   return (
     <div className={styles.dropdownWrapper} ref={wrapperRef}>
-      <label className={styles.label} id={labelId}>
+      <label className={`${styles.label} ${labelColor}`} id={labelId}>
         {label}
       </label>
 

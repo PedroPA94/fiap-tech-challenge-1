@@ -27,43 +27,22 @@ a {
   text-decoration: none;
 }
 
-.textHeadingLarge {
+.text-h-lg {
   font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-regular);
 }
 
-.textHeadingMedium {
+.text-h-md {
   font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-regular);
 }
 
-.textHeadingSmall {
+.text-h-sm {
   font-size: var(--font-size-md);
-  font-weight: var(--font-weight-regular);
 }
 
-.textBodyMedium {
+.text-b-md {
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-regular);
 }
 
-.textBodySmall {
+.text-b-sm {
   font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-regular);
-}
-
-.textBold {
-  font-weight: var(--font-weight-bold) !important;
-}
-
-.textPrimary {
-  color: var(--color-brand-primary-200);
-}
-
-.textDark {
-  color: var(--color-extra-black);
-}
-
-.textLight {
-  color: var(--color-extra-white);
 }

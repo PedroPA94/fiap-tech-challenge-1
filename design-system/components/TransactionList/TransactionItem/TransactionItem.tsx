@@ -13,6 +13,7 @@ export interface TransactionItemProps {
   id: string;
   currency?: string;
   kind?: "default" | "compact";
+  showIcons?: boolean;
   onEdit?: (id: string) => void;
   onDelete?: (id: string) => void;
 }
@@ -27,6 +28,7 @@ export function TransactionItem({
   id,
   currency = "BRL",
   kind = "default",
+  showIcons,
   onEdit,
   onDelete,
 }: TransactionItemProps) {
@@ -52,11 +54,11 @@ export function TransactionItem({
   return (
     <div className={styles.transactionItemContainer}>
       <div className={`${styles.transactionItem} ${styles[kind]}`}>
-        <span>{formatDate(date)}</span>
+        <span className="col-5">{formatDate(date)}</span>
         {kind === "default" && (
           <React.Fragment>
-            <span>{label}</span>
-            <div className={`${styles[amountKind]}`}>
+            <span className="col">{label}</span>
+            <div className={`${styles[amountKind]} col text-end`}>
               {amountKind === "negative" && <span>- </span>}
               <span>
                 {new Intl.NumberFormat("pt-BR", {
@@ -78,29 +80,33 @@ export function TransactionItem({
           </React.Fragment>
         )}
         {kind === "compact" && (
-          <AmountDisplay
-            amount={formattedAmount}
-            label={label}
-            currency={currency}
-            size="small"
-            style="dark"
-            kind={amountKind}
-          />
+          <div className="col">
+            <AmountDisplay
+              amount={formattedAmount}
+              label={label}
+              currency={currency}
+              size="small"
+              style="dark"
+              kind={amountKind}
+            />
+          </div>
         )}
-        <div className={styles.icons}>
-          <IconButton
-            iconPath={mdiPencil}
-            kind="primary"
-            size={iconSize}
-            onClick={() => onEdit?.(id)}
-          />
-          <IconButton
-            iconPath={mdiDelete}
-            kind="primary"
-            size={iconSize}
-            onClick={() => onDelete?.(id)}
-          />
-        </div>
+        {showIcons && (
+          <div className={`${styles.icons} ps-3`}>
+            <IconButton
+              iconPath={mdiPencil}
+              kind="primary"
+              size={iconSize}
+              onClick={() => onEdit?.(id)}
+            />
+            <IconButton
+              iconPath={mdiDelete}
+              kind="primary"
+              size={iconSize}
+              onClick={() => onDelete?.(id)}
+            />
+          </div>
+        )}
       </div>
       <Divider kind="soft" type="secondary" />
     </div>

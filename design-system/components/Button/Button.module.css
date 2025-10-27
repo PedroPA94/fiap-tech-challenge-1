@@ -48,7 +48,7 @@
 
   /* === Spacing === */
   --spacing-horizontal-button: var(--spacing-lg);
-  --spacing-vertical-button: var(--spacing-sm);
+  --spacing-vertical-button: var(--spacing-md);
 }
 
 /* === Base === */

@@ -7,8 +7,9 @@ import styles from "./TransactionList.module.css";
 interface TransactionListProps {
   transactions: TransactionItemProps[];
   kind?: "default" | "compact";
-  onEdit: (id: string) => void;
-  onDelete: (id: string) => void;
+  showIcons?: boolean;
+  onEdit?: (id: string) => void;
+  onDelete?: (id: string) => void;
 }
 
 /**
@@ -39,6 +40,7 @@ interface TransactionListProps {
 export function TransactionList({
   transactions,
   kind = "default",
+  showIcons = true,
   onEdit,
   onDelete,
 }: TransactionListProps) {
@@ -56,6 +58,7 @@ export function TransactionList({
             label={t.label}
             id={t.id}
             kind={kind}
+            showIcons={showIcons}
             onEdit={onEdit}
             onDelete={onDelete}
           />

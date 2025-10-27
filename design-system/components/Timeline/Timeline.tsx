@@ -3,6 +3,7 @@ import {
   TimelineGroup,
   TimelineGroupProps,
 } from "./TimelineGroup/TimelineGroup";
+import styles from "./Timeline.module.css";
 
 interface TimelineProps {
   groups: TimelineGroupProps[];
@@ -39,7 +40,7 @@ interface TimelineProps {
  */
 export function Timeline({ groups }: TimelineProps) {
   return (
-    <React.Fragment>
+    <div className={styles.timeline}>
       {groups.map((group, index) => (
         <TimelineGroup
           key={index}
@@ -47,6 +48,6 @@ export function Timeline({ groups }: TimelineProps) {
           timelineItems={group.timelineItems}
         />
       ))}
-    </React.Fragment>
+    </div>
   );
 }

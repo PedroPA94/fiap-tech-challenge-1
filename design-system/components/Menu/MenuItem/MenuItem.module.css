@@ -49,3 +49,12 @@
   font-weight: var(--font-weight-menu-item-selected);
   color: var(--color-text-menu-item-selected);
 }
+
+.menuLink {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-gap-menu-item);
+}

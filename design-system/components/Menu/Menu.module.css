@@ -5,12 +5,16 @@
 }
 
 .menu {
+  padding: var(--spacing-vertical-menu) var(--spacing-horizontal-menu);
+  width: 100%;
+  font-family: var(--font-family);
+}
+
+.menu ul {
+  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: var(--spacing-gap-menu);
-  padding: var(--spacing-vertical-menu) var(--spacing-horizontal-menu);
-  width: 100%;
-  font-family: var(--font-family);
 }
