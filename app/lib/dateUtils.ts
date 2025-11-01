@@ -45,3 +45,17 @@ export function getFormattedToday(): string {
 
   return formatted.charAt(0).toUpperCase() + formatted.slice(1);
 }
+
+export function formatShortTextDate(value: string): string {
+  const parsedDate = new Date(
+    value.includes("T") ? value : `${value}T00:00:00`
+  );
+
+  if (isNaN(parsedDate.getTime())) return "";
+
+  return new Intl.DateTimeFormat(undefined, {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  }).format(parsedDate);
+}
