@@ -6,6 +6,7 @@ import {
 } from "@/design-system/components";
 import { Transaction } from "../lib/interfaces";
 import { TimelineGroupProps } from "@/design-system/components/Timeline/TimelineGroup/TimelineGroup";
+import Link from "next/link";
 
 interface TransactionHistoryProps {
   transactions: Transaction[];
@@ -23,9 +24,11 @@ export function TransactionHistory({
           <div className="d-flex align-items-center justify-content-between">
             <h2 className="text-h-md fw-bold">Extrato</h2>
 
-            <Button type="button" kind="ghost">
-              Ver mais
-            </Button>
+            <Link href={"/transactions"}>
+              <Button type="button" kind="ghost">
+                Ver mais
+              </Button>
+            </Link>
           </div>
 
           <div className="d-sm-none">

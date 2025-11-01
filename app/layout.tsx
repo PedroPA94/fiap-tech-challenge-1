@@ -27,7 +27,7 @@ export default async function RootLayout({
             username={`${user.firstname} ${user.lastname}`}
             navigationItems={[
               { content: "Início", link: "/" },
-              { content: "Transações", link: "" },
+              { content: "Transações", link: "/transactions" },
             ]}
           />
           {children}

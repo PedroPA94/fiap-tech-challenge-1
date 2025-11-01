@@ -1,5 +1,6 @@
 import { Button, Card, Timeline } from "@/design-system/components";
 import { TimelineGroupProps } from "@/design-system/components/Timeline/TimelineGroup/TimelineGroup";
+import Link from "next/link";
 
 interface SidebarTransactionHistoryProps {
   timelineGroups: TimelineGroupProps[];
@@ -16,9 +17,11 @@ export function SidebarTransactionHistory({
 
           <Timeline groups={timelineGroups} />
 
-          <Button type="button" kind="ghost">
-            Ver mais
-          </Button>
+          <Link href={"/transactions"}>
+            <Button type="button" kind="ghost">
+              Ver mais
+            </Button>
+          </Link>
         </div>
       </Card>
     </div>

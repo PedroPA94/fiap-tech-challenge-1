@@ -8,7 +8,7 @@ export function SidebarMenu() {
           <Menu
             navigationItems={[
               { content: "Início", link: "/" },
-              { content: "Transações", link: "" },
+              { content: "Transações", link: "/transactions" },
             ]}
           />
         </div>

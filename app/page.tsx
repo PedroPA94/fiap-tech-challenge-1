@@ -16,7 +16,8 @@ export default function Home() {
   return (
     <div className="d-flex justify-content-center align-items-center p-3">
       <main
-        className={`d-flex justify-content-center align-items-center w-100 h-100 gap-lg-5 ${styles.main}`}
+        className={`d-flex justify-content-center align-items-center w-100 h-100 gap-lg-5`}
+        style={{ maxWidth: "1200px" }}
       >
         <SidebarMenu />
         <div className={`${styles.cardsWrapper} col`}>
