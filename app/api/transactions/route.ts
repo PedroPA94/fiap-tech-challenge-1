@@ -1,6 +1,7 @@
+import { Transaction } from "@/app/lib/interfaces";
 import { NextResponse } from "next/server";
 
-let transactions = [
+let transactions: Transaction[] = [
   {
     id: "993a5534-26eb-4654-8bae-86420b91a402",
     type: "Depósito",

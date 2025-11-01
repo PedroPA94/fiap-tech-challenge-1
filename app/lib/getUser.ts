@@ -1,4 +1,4 @@
-const TEST_USER_ID = "993a5534-26eb-4654-8bae-86420b91a402";
+const TEST_USER_ID = "120bfc22-1421-4720-adda-17954f5433c6";
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
 export async function getUser() {

@@ -2,8 +2,7 @@ import { NextResponse } from "next/server";
 
 const accountsInfo = [
   {
-    userId: "993a5534-26eb-4654-8bae-86420b91a402",
-    balance: 2500,
+    userId: "120bfc22-1421-4720-adda-17954f5433c6",
     firstname: "Joana",
     lastname: "da Silva Oliveira",
     password: "teste123",
