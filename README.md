@@ -47,7 +47,7 @@ app/
 design-system/
  ├── components/           # Componentes do Design System
  ├── theme.css             # Variáveis globais de estilo do Design System
- ├── theme.scss            # Sobrescrita de variáveis do Bootstrap
+ └── theme.scss            # Sobrescrita de variáveis do Bootstrap
 ```
 
 ## Como executar o projeto
