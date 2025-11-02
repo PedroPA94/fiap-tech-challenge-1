@@ -4,7 +4,8 @@ import { Header } from "@/design-system/components";
 import { Inter } from "next/font/google";
 
 import { getUser } from "./lib/getUser";
-import { UserProvider } from "./UserProvider";
+import { UserProvider } from "./providers/UserProvider";
+import { LoadingProvider } from "./providers/LoadingProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,15 +23,17 @@ export default async function RootLayout({
     <html lang="pt-br" className={inter.variable}>
       <body>
         <UserProvider initialUser={user}>
-          <Header
-            showIcon
-            username={`${user.firstname} ${user.lastname}`}
-            navigationItems={[
-              { content: "Início", link: "/" },
-              { content: "Transações", link: "/transactions" },
-            ]}
-          />
-          {children}
+          <LoadingProvider>
+            <Header
+              showIcon
+              username={`${user.firstname} ${user.lastname}`}
+              navigationItems={[
+                { content: "Início", link: "/" },
+                { content: "Transações", link: "/transactions" },
+              ]}
+            />
+            {children}
+          </LoadingProvider>
         </UserProvider>
       </body>
     </html>

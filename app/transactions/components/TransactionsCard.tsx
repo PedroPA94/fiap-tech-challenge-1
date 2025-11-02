@@ -17,6 +17,7 @@ import {
   updateTransaction,
 } from "../../services/transactionService";
 import { User } from "@/app/lib/interfaces";
+import { useLoading } from "@/app/providers/LoadingProvider";
 
 interface TransactionsCardProps {
   user: User;
@@ -43,6 +44,8 @@ export function TransactionsCard({
     show: false,
   });
 
+  const { setLoading } = useLoading();
+
   const openNewDialog = () => setDialog("new");
   const openEditDialog = (id: string) => {
     setSelectedTransaction(transactions.find((t) => t.id === id));
@@ -56,6 +59,8 @@ export function TransactionsCard({
   const handleConfirm = async () => {
     try {
       if (dialog === "new" && formData) {
+        setLoading(true);
+
         await createTransaction({
           id: "",
           type: formData.label,
@@ -65,6 +70,8 @@ export function TransactionsCard({
         });
         showToast("Transação adicionada com sucesso!", "success");
       } else if (dialog === "edit" && formData) {
+        setLoading(true);
+
         await updateTransaction({
           id: formData.id,
           type: formData.label,
@@ -74,6 +81,7 @@ export function TransactionsCard({
         });
         showToast("Transação atualizada com sucesso!", "success");
       } else if (dialog === "delete" && selectedTransaction) {
+        setLoading(true);
         await deleteTransaction(selectedTransaction.id);
         showToast("Transação excluída com sucesso!", "success");
       }
@@ -83,6 +91,7 @@ export function TransactionsCard({
       console.error("Erro ao confirmar:", err);
       showToast("Ocorreu um erro ao tentar executar a ação desejada", "danger");
     } finally {
+      // setLoading(false);
       setDialog(null);
     }
   };

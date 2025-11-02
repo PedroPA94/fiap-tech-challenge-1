@@ -2,7 +2,7 @@
 
 import { SidebarMenu } from "../components/SidebarMenu";
 import { useTransactions } from "../lib/hooks/useTransactions";
-import { useUser } from "../UserProvider";
+import { useUser } from "../providers/UserProvider";
 import { useMemo } from "react";
 import { TransactionItemProps } from "@/design-system/components/TransactionList/TransactionItem/TransactionItem";
 import { TransactionsCard } from "./components/TransactionsCard";

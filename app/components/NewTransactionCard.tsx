@@ -10,6 +10,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Transaction, User } from "../lib/interfaces";
 import { createTransaction } from "../services/transactionService";
+import { useLoading } from "../providers/LoadingProvider";
 
 interface NewTransactionCardProps {
   user: User;
@@ -36,15 +37,19 @@ export function NewTransactionCard({
     kind: "info",
     show: false,
   });
+  const { setLoading } = useLoading();
 
   const handleButtonClick = async () => {
     try {
+      setLoading(true);
       await createTransaction(newTransaction);
       await refreshTransactions();
       showToast("Transação adicionada com sucesso!", "success");
     } catch (err) {
       console.error("Erro ao criar nova transação:", err);
       showToast("Erro ao adicionar transação", "danger");
+    } finally {
+      setLoading(false);
     }
   };
 

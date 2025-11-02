@@ -2,19 +2,26 @@ import { useEffect, useMemo, useState } from "react";
 import { Transaction, User } from "../interfaces";
 import { TimelineGroupProps } from "@/design-system/components/Timeline/TimelineGroup/TimelineGroup";
 import { getMonthName, getMonthNameIndex, getYear } from "../dateUtils";
+import { useLoading } from "@/app/providers/LoadingProvider";
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
 export function useTransactions(user: User) {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
+  const { setLoading } = useLoading();
 
   const fetchTransactions = async () => {
     if (!user) return;
-    const res = await fetch(
-      `${BASE_URL}/api/transactions?userId=${user.userId}`
-    );
-    const data = await res.json();
-    setTransactions(data);
+    try {
+      setLoading(true);
+      const res = await fetch(
+        `${BASE_URL}/api/transactions?userId=${user.userId}`
+      );
+      const data = await res.json();
+      setTransactions(data);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {

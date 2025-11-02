@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./page.module.css";
-import { useUser } from "./UserProvider";
+import { useUser } from "./providers/UserProvider";
 import { useTransactions } from "./lib/hooks/useTransactions";
 import { SidebarMenu } from "./components/SidebarMenu";
 import { BalanceCard } from "./components/BalanceCard";
