@@ -6,6 +6,7 @@ import { Inter } from "next/font/google";
 import { getUser } from "./lib/getUser";
 import { UserProvider } from "./providers/UserProvider";
 import { LoadingProvider } from "./providers/LoadingProvider";
+import { TransactionTypesProvider } from "./providers/TransactionTypesProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,15 +25,17 @@ export default async function RootLayout({
       <body>
         <UserProvider initialUser={user}>
           <LoadingProvider>
-            <Header
-              showIcon
-              username={`${user.firstname} ${user.lastname}`}
-              navigationItems={[
-                { content: "Início", link: "/" },
-                { content: "Transações", link: "/transactions" },
-              ]}
-            />
-            {children}
+            <TransactionTypesProvider>
+              <Header
+                showIcon
+                username={`${user.firstname} ${user.lastname}`}
+                navigationItems={[
+                  { content: "Início", link: "/" },
+                  { content: "Transações", link: "/transactions" },
+                ]}
+              />
+              {children}
+            </TransactionTypesProvider>
           </LoadingProvider>
         </UserProvider>
       </body>

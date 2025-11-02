@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Input, Dropdown } from "@/design-system/components";
 import { TransactionItemProps } from "@/design-system/components/TransactionList/TransactionItem/TransactionItem";
+import { useTransactionTypes } from "@/app/providers/TransactionTypesProvider";
 
 export type TransactionFormState = Omit<TransactionItemProps, "amount"> & {
   amount: string | number;
@@ -22,6 +23,8 @@ export function TransactionForm({
     amount: transaction?.amount ?? "",
     currency: transaction?.currency ?? "BRL",
   });
+
+  const transactionTypes = useTransactionTypes();
 
   useEffect(() => {
     if (transaction) {
@@ -58,11 +61,10 @@ export function TransactionForm({
       <Dropdown
         label="Tipo de transação"
         placeholder="Selecione"
-        options={[
-          { value: "Depósito", content: "Depósito" },
-          { value: "Transferência", content: "Transferência" },
-          { value: "Pagamento", content: "Pagamento" },
-        ]}
+        options={transactionTypes.map((t) => ({
+          value: t,
+          content: t,
+        }))}
         labelColor="text-primary"
         value={form.label}
         onChange={(value) => setForm({ ...form, label: value as string })}

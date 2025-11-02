@@ -11,6 +11,7 @@ import { useState } from "react";
 import { Transaction, User } from "../lib/interfaces";
 import { createTransaction } from "../services/transactionService";
 import { useLoading } from "../providers/LoadingProvider";
+import { useTransactionTypes } from "../providers/TransactionTypesProvider";
 
 interface NewTransactionCardProps {
   user: User;
@@ -37,6 +38,8 @@ export function NewTransactionCard({
     kind: "info",
     show: false,
   });
+
+  const transactionTypes = useTransactionTypes();
   const { setLoading } = useLoading();
 
   const handleButtonClick = async () => {
@@ -70,7 +73,10 @@ export function NewTransactionCard({
               <Dropdown
                 label="Tipo de transação"
                 placeholder="Selecione"
-                options={[{ value: 1, content: "Teste" }]}
+                options={transactionTypes.map((t) => ({
+                  value: t,
+                  content: t,
+                }))}
                 labelColor="text-primary"
                 onChange={(value) =>
                   setNewTransaction({
