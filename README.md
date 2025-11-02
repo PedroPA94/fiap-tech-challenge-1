@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bytebank — Tech Challenge Fase 1
 
-## Getting Started
+**Bytebank** é uma aplicação de **gerenciamento financeiro** desenvolvida como parte da **Fase 1 do Tech Challenge da Pós-Tech em Front-end Engineering (FIAP)**.
+O projeto representa o **front-end** de uma instituição financeira fictícia, permitindo que usuários consultem o saldo, visualizem extratos, realizem novas transações e editem ou excluam operações anteriores.
 
-First, run the development server:
+## Desafios do projeto
+
+### Design System
+
+O projeto exigiu o desenvolvimento de um Design System próprio, incluindo:
+
+- Criação de design tokens;
+- Desenvolvimento de componentes e interfaces;
+- Documentação.
+
+A documentação foi criada no [zeroheight](https://zeroheight.com/) e pode ser consultada aqui: [Documentação do Design System](https://zeroheight.com/0f7635f80).
+
+O [Figma](https://www.figma.com/) foi utilizado para criar os tokens, componentes e protótipo de interface e pode ser consultado aqui: [Protótipo no Figma](https://www.figma.com/design/vNwKR449FI36uoPNDr8g6X/Projeto-Financeiro--c%C3%B3pia-?node-id=23035-1686&t=bj6GNWOSqeTg3Rol-1).
+
+### Funcionalidades da aplicação
+
+A aplicação implementa as seguintes funcionalidades:
+
+- **Página Home:** saudação ao usuário, saldo da conta corrente e extrato, com opção de incluir uma nova transação;
+- **Página de Transações:** listagem completa das transações, com possibilidade de adicionar, editar ou deletar registros.
+
+## Tecnologias utilizadas
+
+- **Next.js 15+**
+- **React 19**
+- **TypeScript**
+- **Bootstrap 5.3**
+- **SASS / CSS Modules**
+
+## Estrutura do projeto
+
+```
+app/
+ ├── api/                  # Mock APIs
+ ├── components/           # Componentes da página inicial
+ ├── lib/                  # Funções utilitárias e hooks personalizados
+ ├── providers/            # Providers globais
+ ├── transactions/         # Página e componentes relacionados às transações
+ ├── layout.tsx            # Layout raiz
+ ├── page.tsx              # Página inicial
+ └── globals.scss          # Estilos globais
+design-system/
+ ├── components/           # Componentes do Design System
+ ├── theme.css             # Variáveis globais de estilo do Design System
+ ├── theme.scss            # Sobrescrita de variáveis do Bootstrap
+```
+
+## Como executar o projeto
+
+### 1. Clonar o repositório
+
+```bash
+git clone https://github.com/PedroPA94/fiap-tech-challenge-1.git
+cd fiap-tech-challenge-1
+```
+
+### 2. Instalar dependências
+
+```bash
+npm install
+```
+
+### 3. Executar em modo de desenvolvimento
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+A aplicação será executada em:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Demonstração
 
-## Learn More
+-> Vídeo
 
-To learn more about Next.js, take a look at the following resources:
+## Contribuições Futuras
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+As próximas etapas previstas para evolução do projeto incluem:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Login e autenticação de usuário**: tela de login e controle de sessão com cookies.
 
-## Deploy on Vercel
+- **Validação de formulários**: regras de validação e mensagens de feedback visual.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Página 404 personalizada**.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Testes unitários**.
