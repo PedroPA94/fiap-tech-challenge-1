@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useRef } from "react";
-// import { Toast as BootstrapToast } from "bootstrap";
 
 export type ToastKind = "info" | "success" | "danger" | "warning";
 

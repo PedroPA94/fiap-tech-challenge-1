@@ -13,6 +13,14 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+export const metadata = {
+  title: "Bytebank",
+  description: "Liberdade e controle da sua vida financeira",
+  icons: {
+    icon: "/favicon.svg",
+  },
+};
+
 export default async function RootLayout({
   children,
 }: Readonly<{

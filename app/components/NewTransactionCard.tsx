@@ -105,12 +105,7 @@ export function NewTransactionCard({
               </Button>
             </div>
             <div className="pt-5 align-self-center align-self-sm-end">
-              <Image
-                src="/filler_image_2.png"
-                alt=""
-                width={180}
-                height={228}
-              />
+              <Image src="/card_image_2.png" alt="" width={180} height={228} />
             </div>
           </div>
         </div>

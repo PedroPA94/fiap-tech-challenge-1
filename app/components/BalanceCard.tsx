@@ -26,7 +26,7 @@ export function BalanceCard({ user, balance }: BalanceCardProps) {
             <p className="text-b-md">{getFormattedToday()}</p>
           </div>
           <Image
-            src="/filler_image_1.png"
+            src="/card_image_1.png"
             alt=""
             width={250}
             height={230}
@@ -64,7 +64,7 @@ export function BalanceCard({ user, balance }: BalanceCardProps) {
           )}
         </div>
         <Image
-          src="/filler_image_1.png"
+          src="/card_image_1.png"
           alt=""
           width={250}
           height={230}
