@@ -8,16 +8,28 @@ import {
 import { TransactionItemProps } from "@/design-system/components/TransactionList/TransactionItem/TransactionItem";
 import Image from "next/image";
 import React, { useState } from "react";
-import { TransactionForm } from "./TransactionForm";
+import { TransactionForm, TransactionFormState } from "./TransactionForm";
+import {
+  createTransaction,
+  deleteTransaction,
+  updateTransaction,
+} from "../../services/transactionService";
+import { User } from "@/app/lib/interfaces";
 
 interface TransactionsCardProps {
+  user: User;
   transactions: TransactionItemProps[];
+  refreshTransactions: () => Promise<void>;
 }
 
-export function TransactionsCard({ transactions }: TransactionsCardProps) {
+export function TransactionsCard({
+  user,
+  transactions,
+  refreshTransactions,
+}: TransactionsCardProps) {
   const [selectedTransaction, setSelectedTransaction] =
     useState<TransactionItemProps>();
-  const [formData, setFormData] = useState<TransactionItemProps>();
+  const [formData, setFormData] = useState<TransactionFormState>();
   const [dialog, setDialog] = useState<"new" | "edit" | "delete" | null>(null);
 
   const openNewDialog = () => setDialog("new");
@@ -29,19 +41,34 @@ export function TransactionsCard({ transactions }: TransactionsCardProps) {
     setSelectedTransaction(transactions.find((t) => t.id === id));
     setDialog("delete");
   };
+  const handleConfirm = async () => {
+    try {
+      if (dialog === "new" && formData) {
+        await createTransaction({
+          id: "",
+          type: formData.label,
+          value: Number(formData.amount),
+          timestamp: formData.date,
+          userId: user.userId,
+        });
+      } else if (dialog === "edit" && formData) {
+        await updateTransaction({
+          id: formData.id,
+          type: formData.label,
+          value: Number(formData.amount),
+          timestamp: formData.date,
+          userId: user.userId,
+        });
+      } else if (dialog === "delete" && selectedTransaction) {
+        await deleteTransaction(selectedTransaction.id);
+      }
 
-  const handleConfirm = () => {
-    if (dialog === "new") {
-      console.log("Nova transação:", formData);
-      // lógica para adicionar
-    } else if (dialog === "edit") {
-      console.log("Editar transação:", formData);
-      // lógica para editar
-    } else if (dialog === "delete") {
-      console.log("Excluir transação:", selectedTransaction);
-      // lógica para excluir
+      await refreshTransactions();
+    } catch (err) {
+      console.error("Erro ao confirmar:", err);
+    } finally {
+      setDialog(null);
     }
-    setDialog(null);
   };
 
   return (

@@ -9,7 +9,7 @@ import { TransactionsCard } from "./components/TransactionsCard";
 
 export default function Transactions() {
   const { user } = useUser();
-  const { transactions } = useTransactions(user);
+  const { transactions, refreshTransactions } = useTransactions(user);
 
   const transactionsForList = useMemo<TransactionItemProps[]>(() => {
     if (!transactions) return [];
@@ -28,7 +28,11 @@ export default function Transactions() {
         style={{ maxWidth: "1200px" }}
       >
         <SidebarMenu />
-        <TransactionsCard transactions={transactionsForList} />
+        <TransactionsCard
+          user={user}
+          transactions={transactionsForList}
+          refreshTransactions={refreshTransactions}
+        />
       </main>
     </div>
   );

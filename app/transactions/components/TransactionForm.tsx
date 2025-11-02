@@ -2,20 +2,24 @@ import { useEffect, useState } from "react";
 import { Input, Dropdown } from "@/design-system/components";
 import { TransactionItemProps } from "@/design-system/components/TransactionList/TransactionItem/TransactionItem";
 
+export type TransactionFormState = Omit<TransactionItemProps, "amount"> & {
+  amount: string | number;
+};
+
 interface TransactionFormProps {
-  transaction?: TransactionItemProps;
-  onChange?: (data: TransactionItemProps) => void;
+  transaction?: TransactionFormState;
+  onChange?: (data: TransactionFormState) => void;
 }
 
 export function TransactionForm({
   transaction,
   onChange,
 }: TransactionFormProps) {
-  const [form, setForm] = useState<TransactionItemProps>({
+  const [form, setForm] = useState<TransactionFormState>({
     id: transaction?.id ?? "",
     date: transaction?.date ?? "",
     label: transaction?.label ?? "",
-    amount: transaction?.amount ?? 0,
+    amount: transaction?.amount ?? "",
     currency: transaction?.currency ?? "BRL",
   });
 
@@ -41,12 +45,14 @@ export function TransactionForm({
       />
 
       <Input
-        type="number"
+        type="text"
         label="Valor"
         placeholder="Informe o valor da transação"
         required
         value={form.amount.toString()}
-        onChange={(e) => setForm({ ...form, amount: Number(e.target.value) })}
+        onChange={(e) =>
+          setForm({ ...form, amount: e.target.value.replace(",", ".") })
+        }
       />
 
       <Dropdown

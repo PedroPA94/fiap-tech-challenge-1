@@ -11,7 +11,8 @@ import { SidebarTransactionHistory } from "./components/SidebarTransactionHistor
 
 export default function Home() {
   const { user } = useUser();
-  const { transactions, balance, timelineGroups } = useTransactions(user);
+  const { transactions, balance, timelineGroups, refreshTransactions } =
+    useTransactions(user);
 
   return (
     <div className="d-flex justify-content-center align-items-center p-3">
@@ -22,7 +23,10 @@ export default function Home() {
         <SidebarMenu />
         <div className={`${styles.cardsWrapper} col`}>
           <BalanceCard user={user} balance={balance} />
-          <NewTransactionCard />
+          <NewTransactionCard
+            user={user}
+            refreshTransactions={refreshTransactions}
+          />
           <TransactionHistory
             transactions={transactions}
             timelineGroups={timelineGroups}

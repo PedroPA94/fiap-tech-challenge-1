@@ -79,7 +79,7 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
-  const { type, value, userId } = await request.json();
+  const { type, value, userId, timestamp } = await request.json();
 
   if (!type || typeof value !== "number" || !userId) {
     return NextResponse.json({ error: "Dados inválidos" }, { status: 400 });
@@ -89,7 +89,7 @@ export async function POST(request: Request) {
     id: crypto.randomUUID(),
     type,
     value,
-    timestamp: new Date().toISOString().slice(0, 19),
+    timestamp,
     userId,
   };
 

@@ -8,19 +8,18 @@ const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 export function useTransactions(user: User) {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
 
-  // Busca transações do usuário
-  useEffect(() => {
+  const fetchTransactions = async () => {
     if (!user) return;
+    const res = await fetch(
+      `${BASE_URL}/api/transactions?userId=${user.userId}`
+    );
+    const data = await res.json();
+    setTransactions(data);
+  };
 
-    const fetchTransactions = async () => {
-      const res = await fetch(
-        `${BASE_URL}/api/transactions?userId=${user.userId}`
-      );
-      const data = await res.json();
-      setTransactions(data);
-    };
-
+  useEffect(() => {
     fetchTransactions();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   // Calcula saldo
@@ -67,5 +66,10 @@ export function useTransactions(user: User) {
     });
   }, [transactions]);
 
-  return { transactions, balance, timelineGroups };
+  return {
+    transactions,
+    balance,
+    timelineGroups,
+    refreshTransactions: fetchTransactions,
+  };
 }

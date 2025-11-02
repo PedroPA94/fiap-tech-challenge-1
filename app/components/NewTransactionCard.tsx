@@ -1,7 +1,35 @@
 import { Card, Dropdown, Input, Button } from "@/design-system/components";
 import Image from "next/image";
+import { useState } from "react";
+import { Transaction, User } from "../lib/interfaces";
+import { createTransaction } from "../services/transactionService";
 
-export function NewTransactionCard() {
+interface NewTransactionCardProps {
+  user: User;
+  refreshTransactions: () => Promise<void>;
+}
+
+export function NewTransactionCard({
+  user,
+  refreshTransactions,
+}: NewTransactionCardProps) {
+  const [newTransaction, setNewTransaction] = useState<Transaction>({
+    id: "",
+    timestamp: new Date().toISOString().slice(0, 19),
+    type: "",
+    value: 0,
+    userId: user.userId,
+  });
+
+  const handleButtonClick = async () => {
+    try {
+      await createTransaction(newTransaction);
+      await refreshTransactions();
+    } catch (err) {
+      console.error("Erro ao criar nova transação:", err);
+    }
+  };
+
   return (
     <Card kind="secondary" spacing="regular">
       <div className="d-flex flex-column justify-content-center justify-content-sm-between gap-5 px-2 py-1 p-sm-5 text-primary">
@@ -16,6 +44,9 @@ export function NewTransactionCard() {
               placeholder="Selecione"
               options={[{ value: 1, content: "Teste" }]}
               labelColor="text-primary"
+              onChange={(value) =>
+                setNewTransaction({ ...newTransaction, type: value as string })
+              }
             />
 
             <Input
@@ -24,9 +55,17 @@ export function NewTransactionCard() {
               placeholder="Informe o valor da transação"
               required
               type="text"
+              onChange={(e) =>
+                setNewTransaction({
+                  ...newTransaction,
+                  value: Number(e.target.value.replace(",", ".")),
+                })
+              }
             />
 
-            <Button type="button">Concluir transação</Button>
+            <Button type="button" onClick={() => handleButtonClick()}>
+              Concluir transação
+            </Button>
           </div>
           <div className="pt-5 align-self-center align-self-sm-end">
             <Image src="/filler_image_2.png" alt="" width={180} height={228} />

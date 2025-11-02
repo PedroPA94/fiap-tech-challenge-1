@@ -21,7 +21,7 @@ export function BalanceCard({ user, balance }: BalanceCardProps) {
         <div className="d-sm-flex flex-column gap-sm-5 pe-md-5">
           <div className="d-flex flex-column gap-3">
             <h1 className="text-h-md fw-bold">
-              Olá {user ? ", " + user.firstname : ""}! :)
+              Olá{user ? ", " + user.firstname : ""}! :)
             </h1>
             <p className="text-b-md">{getFormattedToday()}</p>
           </div>
