@@ -1,5 +1,6 @@
+import { BASE_URL } from "../config";
+
 const TEST_USER_ID = "120bfc22-1421-4720-adda-17954f5433c6";
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
 export async function getUser() {
   // TODO - com pagina de login, salvar dados do usuario em cookie e buscar

@@ -3,8 +3,7 @@ import { Transaction, User } from "../interfaces";
 import { TimelineGroupProps } from "@/design-system/components/Timeline/TimelineGroup/TimelineGroup";
 import { getMonthName, getMonthNameIndex, getYear } from "../dateUtils";
 import { useLoading } from "@/app/providers/LoadingProvider";
-
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+import { BASE_URL } from "@/app/config";
 
 export function useTransactions(user: User) {
   const [transactions, setTransactions] = useState<Transaction[]>([]);

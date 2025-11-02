@@ -1,6 +1,5 @@
+import { BASE_URL } from "../config";
 import { Transaction } from "../lib/interfaces";
-
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
 export async function createTransaction(data: Transaction) {
   const res = await fetch(`${BASE_URL}/api/transactions`, {
