@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
-import { Toast as BootstrapToast } from "bootstrap";
+// import { Toast as BootstrapToast } from "bootstrap";
 
 export type ToastKind = "info" | "success" | "danger" | "warning";
 
@@ -15,27 +15,29 @@ export function Toast({ message, show, kind, onClose }: ToastProps) {
   const toastRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    if (toastRef.current) {
-      const toast = new BootstrapToast(toastRef.current, { delay: 3000 });
+    if (!show) return;
 
-      if (show) {
-        toast.show();
-      } else {
-        toast.hide();
+    (async () => {
+      const { Toast: BootstrapToast } = await import("bootstrap");
+
+      if (toastRef.current) {
+        const bsToast = BootstrapToast.getOrCreateInstance(toastRef.current, {
+          delay: 3000,
+        });
+
+        bsToast.show();
+
+        const handleHidden = () => onClose?.();
+        toastRef.current.addEventListener("hidden.bs.toast", handleHidden);
+
+        return () => {
+          toastRef.current?.removeEventListener(
+            "hidden.bs.toast",
+            handleHidden
+          );
+        };
       }
-
-      toastRef.current.addEventListener("hidden.bs.toast", () => {
-        onClose?.();
-      });
-
-      return () => {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        toastRef.current?.removeEventListener(
-          "hidden.bs.toast",
-          onClose || (() => {})
-        );
-      };
-    }
+    })();
   }, [show, onClose]);
 
   return (
