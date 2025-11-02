@@ -69,8 +69,8 @@
   --bs-secondary-rgb: 157, 194, 195;
   --bs-success-rgb: 0, 120, 0;
   --bs-info-rgb: 44, 45, 255;
-  --bs-warning-rgb: 191, 19, 19;
-  --bs-danger-rgb: 255, 193, 7;
+  --bs-danger-rgb: 191, 19, 19;
+  --bs-warning-rgb: 255, 193, 7;
   --bs-light-rgb: 255, 255, 255;
   --bs-dark-rgb: 0, 0, 0;
 }

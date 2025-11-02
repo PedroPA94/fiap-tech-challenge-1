@@ -4,6 +4,8 @@ import {
   Button,
   TransactionList,
   Dialog,
+  ToastKind,
+  Toast,
 } from "@/design-system/components";
 import { TransactionItemProps } from "@/design-system/components/TransactionList/TransactionItem/TransactionItem";
 import Image from "next/image";
@@ -31,6 +33,15 @@ export function TransactionsCard({
     useState<TransactionItemProps>();
   const [formData, setFormData] = useState<TransactionFormState>();
   const [dialog, setDialog] = useState<"new" | "edit" | "delete" | null>(null);
+  const [toast, setToast] = useState<{
+    message: string;
+    kind: ToastKind;
+    show: boolean;
+  }>({
+    message: "",
+    kind: "info",
+    show: false,
+  });
 
   const openNewDialog = () => setDialog("new");
   const openEditDialog = (id: string) => {
@@ -41,6 +52,7 @@ export function TransactionsCard({
     setSelectedTransaction(transactions.find((t) => t.id === id));
     setDialog("delete");
   };
+
   const handleConfirm = async () => {
     try {
       if (dialog === "new" && formData) {
@@ -51,6 +63,7 @@ export function TransactionsCard({
           timestamp: formData.date,
           userId: user.userId,
         });
+        showToast("Transação adicionada com sucesso!", "success");
       } else if (dialog === "edit" && formData) {
         await updateTransaction({
           id: formData.id,
@@ -59,20 +72,27 @@ export function TransactionsCard({
           timestamp: formData.date,
           userId: user.userId,
         });
+        showToast("Transação atualizada com sucesso!", "success");
       } else if (dialog === "delete" && selectedTransaction) {
         await deleteTransaction(selectedTransaction.id);
+        showToast("Transação excluída com sucesso!", "success");
       }
 
       await refreshTransactions();
     } catch (err) {
       console.error("Erro ao confirmar:", err);
+      showToast("Ocorreu um erro ao tentar executar a ação desejada", "danger");
     } finally {
       setDialog(null);
     }
   };
 
+  const showToast = (message: string, kind: ToastKind) => {
+    setToast({ message, kind, show: true });
+  };
+
   return (
-    <React.Fragment>
+    <>
       <Card kind="neutral" spacing="regular">
         <div className="d-flex flex-column justify-content-center align-items-start gap-5">
           <div className="w-100 d-lg-flex justify-content-between">
@@ -191,6 +211,15 @@ export function TransactionsCard({
         </div>
         <p>Deseja excluir essa transação?</p>
       </Dialog>
-    </React.Fragment>
+
+      <Toast
+        message={toast.message}
+        show={toast.show}
+        kind={toast.kind}
+        onClose={() => {
+          setToast((t) => ({ ...t, show: false }));
+        }}
+      />
+    </>
   );
 }
