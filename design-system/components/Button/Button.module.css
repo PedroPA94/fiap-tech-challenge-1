@@ -60,6 +60,7 @@
   padding: var(--spacing-vertical-button) var(--spacing-horizontal-button);
   border: none;
   cursor: pointer;
+  width: 100%;
 }
 .button:disabled {
   background-color: var(--color-bg-button-disabled);
