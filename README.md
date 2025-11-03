@@ -3,6 +3,8 @@
 **Bytebank** é uma aplicação de **gerenciamento financeiro** desenvolvida como parte da **Fase 1 do Tech Challenge da Pós-Tech em Front-end Engineering (FIAP)**.
 O projeto representa o **front-end** de uma instituição financeira fictícia, permitindo que usuários consultem o saldo, visualizem extratos, realizem novas transações e editem ou excluam operações anteriores.
 
+[Repositório no Github](https://github.com/PedroPA94/fiap-tech-challenge-1)
+
 ## Desafios do projeto
 
 ### Design System
