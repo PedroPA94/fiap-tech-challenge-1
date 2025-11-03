@@ -91,8 +91,8 @@ export function TransactionsCard({
       console.error("Erro ao confirmar:", err);
       showToast("Ocorreu um erro ao tentar executar a ação desejada", "danger");
     } finally {
-      // setLoading(false);
       setDialog(null);
+      setLoading(false);
     }
   };
 

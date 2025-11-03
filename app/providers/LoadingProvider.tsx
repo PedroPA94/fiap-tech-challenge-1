@@ -17,10 +17,10 @@ export const LoadingProvider = ({ children }: { children: ReactNode }) => {
       {children}
       {loading && (
         <div
-          className="position-absolute top-0 bottom-0 start-0 end-0"
+          className="position-absolute top-0 bottom-0 start-0 end-0 z-3"
           style={{ backgroundColor: "#00000050" }}
         >
-          <div className="d-flex w-100 h-100 justify-content-center align-items-center z-50 ">
+          <div className="d-flex w-100 h-100 justify-content-center align-items-center">
             <div className="spinner-border text-highlight" role="status">
               <span className="visually-hidden">Carregando...</span>
             </div>
